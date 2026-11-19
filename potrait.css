@@ -1,0 +1,54 @@
+
+/* Portrait positioning and transparent blending */
+
+.portrait {
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    left: 12%;
+    width: 43%;
+    height: auto;
+    max-height: 85%;
+    object-fit: contain;
+    object-position: center bottom;
+
+    /* Remove the rectangular frame */
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+
+    /* Make the portrait blend with the pink glow */
+    filter:
+        drop-shadow(0 0 12px rgba(255, 66, 105, 0.25))
+        drop-shadow(0 0 25px rgba(255, 66, 105, 0.15));
+
+    pointer-events: none;
+}
+
+/* Desktop positioning */
+@media (min-width: 901px) {
+    .visual .portrait {
+        left: -5%;
+        width: 48%;
+        max-height: 95%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .visual .portrait {
+        left: 12%;
+        width: 38%;
+        max-height: 90%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+    .visual .portrait {
+        left: 5%;
+        width: 44%;
+        max-height: 85%;
+    }
+}
